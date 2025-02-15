@@ -3,7 +3,15 @@ import streamlit as st
 st.set_page_config(layout="wide")  # Ensure this is the first command
 
 import numpy as np
-import matplotlib.pyplot as plt
+import subprocess
+
+# Ensure matplotlib is installed before importing
+try:
+    import matplotlib.pyplot as plt
+except ModuleNotFoundError:
+    print("Matplotlib is missing. Installing now...")
+    subprocess.run(["pip", "install", "matplotlib"])
+    import matplotlib.pyplot as plt  # Try importing again
 from ultralytics import YOLO
 from PIL import Image
 import torch
