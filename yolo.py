@@ -4,7 +4,11 @@ st.set_page_config(layout="wide")  # Ensure this is the first command
 
 import numpy as np
 import subprocess
+import matplotlib
+matplotlib.use('Agg')  # Use Agg (Anti-Grain Geometry) backend for headless environments
+
 import matplotlib.pyplot as plt
+
 from ultralytics import YOLO
 from PIL import Image
 import torch
